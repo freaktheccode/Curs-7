@@ -11,6 +11,10 @@
             {
                 case WriterTypes.CsvWriter:
                     return new CsvWriter(fileName);
+                case WriterTypes.XmlWriter:
+                    return new XMLWriter(fileName);
+                case WriterTypes.JsonWriter:
+                    return new JSONWriter(fileName);
                 default:
                     return new CsvWriter(fileName);
             }

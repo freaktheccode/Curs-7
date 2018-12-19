@@ -15,7 +15,7 @@ namespace CursStudentiInfo
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Logger.Instance.InitializeLogger("log.csv", System.Diagnostics.TraceLevel.Verbose, WriterTypes.CsvWriter);
+            Logger.Instance.InitializeLogger("log.json", System.Diagnostics.TraceLevel.Verbose, WriterTypes.JsonWriter);
             Logger.Instance.LogInfoMessage("Program started");
             Player player1 = new Player("Player1");
             Player player2 = new Player("Player2");
