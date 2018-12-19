@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="WpfNew.Views.Games"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="500">
+
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="Auto"/>
+            <RowDefinition x:Uid="RowDefinition_2" Height="Auto"/>
+            <RowDefinition x:Uid="RowDefinition_3" Height="*"/>
+        </Grid.RowDefinitions>
+
+        <GroupBox x:Uid="groupBox1" x:Name="grpBoxpressureRipple" Header = "Games" Grid.Row="1" Grid.Column="0" Margin="3, 3, 3, 6" 
+                                              VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Uid="RowDefinition_11"/>
+                    <RowDefinition x:Uid="RowDefinition_12"/>
+                    <RowDefinition x:Uid="RowDefinition_13"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Uid="ColumnDefinition_11" Width="Auto"/>
+                    <ColumnDefinition x:Uid="ColumnDefinition_12" Width="Auto"/>
+                    <ColumnDefinition x:Uid="ColumnDefinition_13" Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Uid="txtBlxSelectGameType" Margin="10, 10, 3, 3" Grid.Row="0" Grid.Column="0">Select Game:</TextBlock>
+                <ComboBox  x:Uid="comboBoxSelectGameType" Margin="10, 10, 3, 3" Grid.Row="0" Grid.Column="1" Width="130" ItemsSource="{Binding Path = GamesModel.ComboBoxContent}" SelectedItem="{Binding Path = GamesModel.ComboBoxSelectedItem}" IsSynchronizedWithCurrentItem="True"></ComboBox>
+
+                <TextBlock x:Uid="txtBlkPlayerNumbersUid" Margin="10, 10, 3, 3" Grid.Row="1" Grid.Column="0">Number of Players:</TextBlock>
+                <TextBox   x:Uid="txtBoxEnterPlayersNumberUid" Margin="10, 10, 3, 3" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" TextAlignment="Right" Text="{Binding Path = GamesModel.PlayersNumber, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+                <StackPanel x:Uid="stackButtonsIdUid" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" Visibility="Visible"  Margin="6, 6, 6, 6">
+                    <Button x:Uid="startGameUid"  Margin="0, 0, 3, 0" MinWidth="100" MinHeight="23" Background="White" IsEnabled="{Binding Path= GamesModel.EnableStartButton, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Command="{Binding StartGame}" >Start</Button>
+                </StackPanel>
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox x:Uid="groupBox2" x:Name="grpBoxResults" Header = "Results" Grid.Row="2" Grid.Column="0" Margin="3, 3, 3, 6"
+                                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+
+            <Grid Grid.Row="1"  Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Uid="ColumnDefinition_41" Width="Auto"/>
+                    <ColumnDefinition x:Uid="ColumnDefinition_42" Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListBox Margin="0,0,6,0" Grid.Column="0" MinWidth="450" MinHeight="100"  Width="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+               ItemsSource="{Binding Path= GamesModel.Results, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" >
+                </ListBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

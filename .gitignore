@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CursStudentiInfo/obj/Debug
+/.vs/CursStudentiInfo/v15/Server/sqlite3
+/Games/obj/Debug
+/Logging/obj/Debug
+/WpfCursStudentiInfo/obj/Debug
