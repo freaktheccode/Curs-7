@@ -43,7 +43,7 @@ namespace Logging
         public void InitializeLogger(string fileName, TraceLevel level, WriterTypes logType)
         {
             WriterFactory writerFactory = new WriterFactory();
-            LogWriter = writerFactory.GetWriter(WriterTypes.CsvWriter, fileName);
+            LogWriter = writerFactory.GetWriter(logType, fileName);
             this.level = level;
             isInitialized = true;            
         }
