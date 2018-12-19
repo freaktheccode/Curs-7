@@ -1,16 +1,13 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Logging
 {
+    /// <summary>
+    /// This class writes messages in a file using the JSON format and derrives from the AbstractWriter class
+    /// </summary>
     internal class JSONWriter : AbstractWriter
     {
-        private bool isStarted = false;
         /// <summary>
         /// The constructor uses the base class initialization logic and adds an initialization for knowing if the file has to be overwritten or not
         /// </summary>
@@ -27,17 +24,8 @@ namespace Logging
             string output = JsonConvert.SerializeObject(message);
             using (StreamWriter s = new StreamWriter(fileName, true))
             {
-                if (!isStarted) {
-                    sw
-                }
-                else
-                {
-                    s.WriteLine(output);
-
-                }
+                s.WriteLine(output);
             }
-
-            isStarted = true;
         }
     }
 }

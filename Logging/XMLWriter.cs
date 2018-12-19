@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Logging
 {
+    /// <summary>
+    /// This class writes messages in a file using the XML format and derrives from the AbstractWriter class
+    /// </summary>
     class XMLWriter : AbstractWriter
     {
         /// <summary>
