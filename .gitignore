@@ -1,9 +1,20 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+/.kdev4
+/.idea
+/.clwb
+/typhoon.kdev4
+*.sdf
+*.suo
+*~
+*.VFManifest
+*.pyc
+*.feature.cs
+bin/
+obj/
+.coveragescope
+.sonar
+packages/
+!packages/repositories.config
+.vscode/.vs_code_bazel_build/
+*.opendb
+.vs/
 
-/CursStudentiInfo/obj/Debug
-/.vs/CursStudentiInfo/v15/Server/sqlite3
-/Games/obj/Debug
-/Logging/obj/Debug
-/WpfCursStudentiInfo/obj/Debug
