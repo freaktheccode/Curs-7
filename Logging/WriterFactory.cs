@@ -9,10 +9,10 @@
         {
             switch (type)
             {
-                //case WriterTypes.CsvWriter:
-                //    return new CsvWriter(fileName);
-                //case WriterTypes.XmlWriter:
-                //    //Implement XMLWriter
+                case WriterTypes.CsvWriter:
+                    return new CsvWriter(fileName);
+                case WriterTypes.XmlWriter:
+                    //Implement XMLWriter
                 //case WriterTypes.JsonWriter:
                 //    //Implement JSONWriter
                 default:
