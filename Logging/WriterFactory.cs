@@ -1,4 +1,6 @@
-﻿namespace Logging
+﻿using System.Xml;
+
+namespace Logging
 {
     /// <summary>
     /// This class is used for generating writer instances based on a desired type
@@ -9,12 +11,9 @@
         {
             switch (type)
             {
-                //case WriterTypes.CsvWriter:
-                //    return new CsvWriter(fileName);
-                //case WriterTypes.XmlWriter:
-                //    //Implement XMLWriter
-                //case WriterTypes.JsonWriter:
-                //    //Implement JSONWriter
+                case WriterTypes.CsvWriter: return new CsvWriter(fileName);
+                case WriterTypes.XmlWriter: return new XMLWriter(fileName);
+                
                 default:
                     return new CsvWriter(fileName);
             }
