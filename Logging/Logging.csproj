@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractWriter.cs" />
+    <Compile Include="XmlWriter.cs" />
     <Compile Include="CsvWriter.cs" />
     <Compile Include="IWriter.cs" />
     <Compile Include="Logger.cs" />
